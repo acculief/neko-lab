@@ -1,0 +1,55 @@
+import type { Product } from '@/lib/products';
+import { calcScore } from '@/lib/scoring';
+
+const raw: Omit<Product, 'score'>[] = [
+  {
+    id: 'unicharm-deo-sand', slug: 'deo-double', name: 'デオダブル ダブル消臭猫砂（鉱物系）', brand: 'ユニ・チャーム',
+    category: 'cat-litter', price: 1980, priceUnit: '8L', image: '/images/deodouble.jpg',
+    amazonUrl: 'https://www.amazon.co.jp/dp/B0BWXJFQYP',
+    description: 'アンモニア・硫化水素をW消臭する高性能猫砂。素早く固まり処理がしやすい鉱物系。飛び散りにくい丸粒加工で清潔を保ちやすい。',
+    specs: { '素材': '鉱物系（ベントナイト）', '粒サイズ': '中粒', '重量': '6.4kg', '消臭成分': 'ダブル消臭' },
+    scoreInput: { odor_control: 90, ease_of_use: 85, price_value: 82, reviews: 88 },
+    tags: ['W消臭', '鉱物系', '飛び散りにくい', 'コスパ良好'],
+  },
+  {
+    id: 'farcry-silica', slug: 'silica-pro', name: 'シリカゲルクリスタル猫砂 プレミアム', brand: 'Crystal Clear',
+    category: 'cat-litter', price: 2800, priceUnit: '3.8L', image: '/images/silica.jpg',
+    amazonUrl: 'https://www.amazon.co.jp/s?k=%E3%82%B7%E3%83%AA%E3%82%AB%E3%82%B2%E3%83%AB+%E7%8C%AB%E7%A0%82+%E3%82%AF%E3%83%AA%E3%82%B9%E3%82%BF%E3%83%AB',
+    description: '超高吸収シリカゲルで1〜1.5ヶ月長持ち。尿を瞬時に吸収しアンモニア臭を閉じ込める。舞い散りが少なく花粉症・アレルギーのある家庭にも最適。',
+    specs: { '素材': 'シリカゲル', '粒サイズ': '小粒クリスタル', '持続期間': '1〜1.5ヶ月/1匹', '特徴': '超吸収・消臭' },
+    scoreInput: { odor_control: 95, ease_of_use: 80, price_value: 68, reviews: 84 },
+    tags: ['超消臭', '長持ち', '舞い散りなし', 'アレルギー対応'],
+  },
+  {
+    id: 'okara-sand', slug: 'okara-natural', name: 'おからの猫砂 ナチュラル', brand: 'ナチュラルペット',
+    category: 'cat-litter', price: 1680, priceUnit: '6L', image: '/images/okara-sand.jpg',
+    amazonUrl: 'https://www.amazon.co.jp/s?k=%E3%81%8A%E3%81%8B%E3%82%89+%E7%8C%AB%E7%A0%82+%E3%83%8A%E3%83%81%E3%83%A5%E3%83%A9%E3%83%AB',
+    description: '食品由来のおから100%使用で誤飲しても安全。トイレに流せるエコフレンドリーな猫砂。固まりが素早く処理しやすい。子猫・老猫・療法食中の猫にも安心。',
+    specs: { '素材': 'おから（大豆）', '粒サイズ': '細粒', '処理方法': 'トイレに流せる', '特徴': '誤飲OK・自然由来' },
+    scoreInput: { odor_control: 78, ease_of_use: 92, price_value: 85, reviews: 85 },
+    tags: ['おから', '誤飲安全', 'トイレに流せる', 'エコ', '子猫OK'],
+  },
+  {
+    id: 'wood-pellets-luxe', slug: 'pine-wood-pellet', name: 'ひのきの猫砂 プレミアム', brand: 'ウッディー',
+    category: 'cat-litter', price: 2200, priceUnit: '7L', image: '/images/wood-pellet.jpg',
+    amazonUrl: 'https://www.amazon.co.jp/s?k=%E3%81%B2%E3%81%AE%E3%81%8D+%E7%8C%AB%E7%A0%82',
+    description: '国産ひのきチップを使用した自然素材猫砂。ひのきの天然消臭成分が強力に臭いをカット。軽量で扱いやすく、崩れた砂の処理も簡単。',
+    specs: { '素材': '国産ひのき', '粒サイズ': 'ペレット', '処理方法': '燃えるゴミ', '特徴': '天然消臭・軽量' },
+    scoreInput: { odor_control: 84, ease_of_use: 78, price_value: 78, reviews: 80 },
+    tags: ['ひのき天然消臭', '軽量', '国産', '自然素材'],
+  },
+  {
+    id: 'premium-clumping', slug: 'premium-clumping', name: 'ライオン ニオイをとる砂 特盛', brand: 'ライオン',
+    category: 'cat-litter', price: 2480, priceUnit: '10L', image: '/images/lion-sand.jpg',
+    amazonUrl: 'https://www.amazon.co.jp/s?k=%E3%83%A9%E3%82%A4%E3%82%AA%E3%83%B3+%E3%83%8B%E3%82%AA%E3%82%A4%E3%82%92%E3%81%A8%E3%82%8B%E7%A0%82',
+    description: '業界トップクラスの消臭力を持つ鉱物系猫砂。瞬時に固まりスコップで取り出しやすい。国産で品質管理が厳格。大容量でコスパも優秀。',
+    specs: { '素材': '鉱物系（ベントナイト）', '粒サイズ': '細粒', '重量': '8kg', '特徴': '高消臭・高コスパ' },
+    scoreInput: { odor_control: 88, ease_of_use: 88, price_value: 90, reviews: 86 },
+    tags: ['高消臭', 'コスパ最高', '大容量', '国産', '定番'],
+  },
+];
+
+export const CAT_LITTER_PRODUCTS: Product[] = raw.map(p => ({
+  ...p,
+  score: calcScore(p.scoreInput, 'cat-litter'),
+}));

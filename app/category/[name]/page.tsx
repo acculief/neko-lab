@@ -2,6 +2,10 @@ import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { CATEGORIES } from '@/lib/products';
 import { CAT_FOOD_PRODUCTS } from '@/data/products/cat-food';
+import { KIDNEY_FOOD_PRODUCTS } from '@/data/products/kidney-food';
+import { AUTO_TOILET_PRODUCTS } from '@/data/products/auto-toilet';
+import { CAT_LITTER_PRODUCTS } from '@/data/products/cat-litter';
+import { INSURANCE_PRODUCTS } from '@/data/products/insurance';
 import ProductCard from '@/components/ProductCard';
 import ComparisonTable from '@/components/ComparisonTable';
 import type { Product } from '@/lib/products';
@@ -15,6 +19,10 @@ export async function generateStaticParams() {
 
 function getProducts(slug: string): Product[] {
   if (slug === 'premium-cat-food') return CAT_FOOD_PRODUCTS;
+  if (slug === 'kidney-care-food') return KIDNEY_FOOD_PRODUCTS;
+  if (slug === 'auto-litter-box') return AUTO_TOILET_PRODUCTS;
+  if (slug === 'premium-cat-litter') return CAT_LITTER_PRODUCTS;
+  if (slug === 'pet-insurance') return INSURANCE_PRODUCTS;
   return [];
 }
 

@@ -9,7 +9,7 @@ export interface Product {
   price: number;
   priceUnit: string;
   image: string;
-  imageUrl?: string;    // 外部画像URL (referrerPolicy="no-referrer"で表示)
+  imageUrl?: string;
   amazonUrl?: string;
   rakutenUrl?: string;
   description: string;
@@ -25,12 +25,48 @@ export interface Category {
   slug: string;
   description: string;
   icon: string;
+  iconImg?: string;  // nanobanana生成画像パス
 }
 
 export const CATEGORIES: Category[] = [
-  { id: 'cat-food', name: 'プレミアムキャットフード', slug: 'premium-cat-food', description: '厳選素材を使ったプレミアムキャットフードを猫暮らしスコアで比較。', icon: '🍖' },
-  { id: 'kidney-food', name: '腎臓ケアフード', slug: 'kidney-care-food', description: '腎臓病の猫に最適な療法食を獣医師監修の評価基準で徹底比較。', icon: '💊' },
-  { id: 'auto-toilet', name: '全自動猫トイレ', slug: 'auto-litter-box', description: '自動掃除で手間いらずの全自動猫トイレ。臭い・清潔さ・使いやすさを比較。', icon: '🚽' },
-  { id: 'cat-litter', name: '高級猫砂', slug: 'premium-cat-litter', description: '消臭力・固まり方で選ぶ高級猫砂ランキング。', icon: '✨' },
-  { id: 'insurance', name: 'ペット保険比較', slug: 'pet-insurance', description: '猫のペット保険を補償内容・保険料・口コミで徹底比較。', icon: '🛡️' },
+  {
+    id: 'cat-food',
+    name: 'プレミアムキャットフード',
+    slug: 'premium-cat-food',
+    description: '厳選素材を使ったプレミアムキャットフードを猫暮らしスコアで比較。',
+    icon: '🍖',
+    iconImg: '/icons/catfood.png',
+  },
+  {
+    id: 'kidney-food',
+    name: '腎臓ケアフード',
+    slug: 'kidney-care-food',
+    description: '腎臓病の猫に最適な療法食を獣医師監修の評価基準で徹底比較。',
+    icon: '💊',
+    iconImg: '/icons/kidney.png',
+  },
+  {
+    id: 'auto-toilet',
+    name: '全自動猫トイレ',
+    slug: 'auto-litter-box',
+    description: '自動掃除で手間いらずの全自動猫トイレ。臭い・清潔さ・使いやすさを比較。',
+    icon: '🚽',
+    iconImg: '/icons/toilet.png',
+  },
+  {
+    id: 'cat-litter',
+    name: '高級猫砂',
+    slug: 'premium-cat-litter',
+    description: '消臭力・固まり方で選ぶ高級猫砂ランキング。',
+    icon: '✨',
+    iconImg: '/icons/litter.png',
+  },
+  {
+    id: 'insurance',
+    name: 'ペット保険比較',
+    slug: 'pet-insurance',
+    description: '猫のペット保険を補償内容・保険料・口コミで徹底比較。',
+    icon: '🛡️',
+    iconImg: '/icons/insurance.png',
+  },
 ];
