@@ -15,7 +15,7 @@ export default function Header() {
             <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center flex-shrink-0">
               {!logoError ? (
                 <img
-                  src="/icons/logo.png"
+                  src="/icons/logo.svg"
                   alt="猫暮らしラボ"
                   width={32}
                   height={32}

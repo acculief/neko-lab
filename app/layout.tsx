@@ -12,10 +12,10 @@ export const metadata: Metadata = {
   description: "キャットフード・猫砂・全自動トイレ・ペット保険を猫暮らしスコアで徹底比較。愛猫に最高の選択を。",
   icons: {
     icon: [
-      { url: "/icons/logo.png", sizes: "any" },
+      { url: "/icons/logo.svg", sizes: "any" },
       { url: "/favicon.ico", sizes: "32x32" },
     ],
-    apple: "/icons/logo.png",
+    apple: "/icons/logo.svg",
   },
   openGraph: {
     siteName: "猫暮らしラボ",
