@@ -1,4 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
-  <circle cx="24" cy="24" r="24" fill="#FFF8ED"/>
-  <text x="24" y="34" font-size="28" text-anchor="middle" font-family="Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif">🏆</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A2D4A"/>
+      <stop offset="100%" stop-color="#0F1C30"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F5D060"/>
+      <stop offset="100%" stop-color="#C4892A"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="95" fill="url(#bg)"/>
+  <!-- カップ本体 -->
+  <path d="M68 45 L132 45 L126 96 Q100 118 74 96 Z" fill="url(#gold)"/>
+  <!-- 光沢 -->
+  <path d="M78 50 L90 50 L87 86 Q83 91 80 89 Z" fill="white" opacity="0.22"/>
+  <!-- ハンドル左 -->
+  <path d="M68 54 Q42 54 42 74 Q42 92 68 88" stroke="#C4892A" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+  <!-- ハンドル右 -->
+  <path d="M132 54 Q158 54 158 74 Q158 92 132 88" stroke="#C4892A" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+  <!-- 台座ネック -->
+  <rect x="90" y="96" width="20" height="20" fill="#C4892A"/>
+  <!-- 台座ベース -->
+  <rect x="70" y="116" width="60" height="12" rx="4" fill="url(#gold)"/>
+  <rect x="76" y="128" width="48" height="8" rx="3" fill="#C4892A"/>
+  <!-- 星 -->
+  <polygon points="100,55 104.5,68 118,68 107.5,76 111,89 100,81.5 89,89 92.5,76 82,68 95.5,68" fill="white" opacity="0.92"/>
 </svg>

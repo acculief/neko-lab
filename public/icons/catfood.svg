@@ -1,4 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
-  <circle cx="24" cy="24" r="24" fill="#FFF3DC"/>
-  <text x="24" y="34" font-size="28" text-anchor="middle" font-family="Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif">🍖</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A2D4A"/>
+      <stop offset="100%" stop-color="#0F1C30"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F0C040"/>
+      <stop offset="100%" stop-color="#C4892A"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="95" fill="url(#bg)"/>
+  <!-- 皿 -->
+  <ellipse cx="100" cy="135" rx="52" ry="12" fill="url(#gold)" opacity="0.9"/>
+  <ellipse cx="100" cy="128" rx="52" ry="10" fill="none" stroke="#F0C040" stroke-width="3"/>
+  <!-- フード -->
+  <ellipse cx="100" cy="118" rx="38" ry="16" fill="#E8956A"/>
+  <ellipse cx="84" cy="116" rx="15" ry="9" fill="#D4722A"/>
+  <ellipse cx="116" cy="116" rx="15" ry="9" fill="#D4722A"/>
+  <!-- 猫の耳 -->
+  <polygon points="62,72 72,48 82,68" fill="white"/>
+  <polygon points="65,68 72,52 79,66" fill="#FFC0C0"/>
+  <polygon points="118,68 128,48 138,72" fill="white"/>
+  <polygon points="121,66 128,52 135,68" fill="#FFC0C0"/>
+  <!-- 顔 -->
+  <circle cx="100" cy="82" r="28" fill="white"/>
+  <ellipse cx="89" cy="79" rx="5" ry="6" fill="#1A2D4A"/>
+  <circle cx="91" cy="77" r="2" fill="white"/>
+  <ellipse cx="111" cy="79" rx="5" ry="6" fill="#1A2D4A"/>
+  <circle cx="113" cy="77" r="2" fill="white"/>
+  <ellipse cx="100" cy="87" rx="3" ry="2" fill="#FFB6C1"/>
+  <line x1="68" y1="85" x2="86" y2="87" stroke="#8A8A8A" stroke-width="1.2"/>
+  <line x1="68" y1="90" x2="86" y2="89" stroke="#8A8A8A" stroke-width="1.2"/>
+  <line x1="114" y1="87" x2="132" y2="85" stroke="#8A8A8A" stroke-width="1.2"/>
+  <line x1="114" y1="89" x2="132" y2="90" stroke="#8A8A8A" stroke-width="1.2"/>
+  <path d="M100 89 Q94 94 90 92" stroke="#1A2D4A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M100 89 Q106 94 110 92" stroke="#1A2D4A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
 </svg>

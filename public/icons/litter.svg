@@ -1,4 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
-  <circle cx="24" cy="24" r="24" fill="#FFFFF0"/>
-  <text x="24" y="34" font-size="28" text-anchor="middle" font-family="Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif">✨</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A2D4A"/>
+      <stop offset="100%" stop-color="#0F1C30"/>
+    </linearGradient>
+    <linearGradient id="sand" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E8C87A"/>
+      <stop offset="100%" stop-color="#C4892A"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="95" fill="url(#bg)"/>
+  <!-- 砂トレー -->
+  <rect x="44" y="122" width="112" height="38" rx="8" fill="url(#sand)"/>
+  <!-- 砂粒 -->
+  <circle cx="63" cy="134" r="4" fill="#D4A030" opacity="0.8"/>
+  <circle cx="80" cy="142" r="3" fill="#E8D090" opacity="0.8"/>
+  <circle cx="100" cy="136" r="4.5" fill="#C4892A" opacity="0.8"/>
+  <circle cx="120" cy="143" r="3" fill="#E8C87A" opacity="0.8"/>
+  <circle cx="137" cy="135" r="4" fill="#D4A030" opacity="0.8"/>
+  <circle cx="74" cy="150" r="3" fill="#C4892A" opacity="0.7"/>
+  <circle cx="112" cy="149" r="3" fill="#C4892A" opacity="0.7"/>
+  <!-- 肉球メイン -->
+  <ellipse cx="100" cy="95" rx="22" ry="20" fill="white"/>
+  <!-- 指肉球 -->
+  <ellipse cx="80" cy="77" rx="9" ry="8" fill="white"/>
+  <ellipse cx="100" cy="71" rx="9" ry="8" fill="white"/>
+  <ellipse cx="120" cy="77" rx="9" ry="8" fill="white"/>
+  <!-- ピンク部分 -->
+  <ellipse cx="100" cy="95" rx="15" ry="14" fill="#FFB6C1"/>
+  <ellipse cx="80" cy="77" rx="6" ry="5.5" fill="#FFB6C1"/>
+  <ellipse cx="100" cy="71" rx="6" ry="5.5" fill="#FFB6C1"/>
+  <ellipse cx="120" cy="77" rx="6" ry="5.5" fill="#FFB6C1"/>
+  <!-- スパークル -->
+  <text x="144" y="70" font-size="20" fill="#F0C040">✦</text>
+  <text x="44" y="67" font-size="13" fill="#F0C040">✦</text>
+  <text x="152" y="108" font-size="9" fill="#F0C040">✦</text>
 </svg>

@@ -94,7 +94,7 @@ export default function TopPage() {
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-black text-[#1A2D4A] flex items-center gap-2">
-              <CategoryIcon icon="🍖" size={24} />
+              <CategoryIcon icon="🍖" iconImg="/icons/catfood.svg" size={24} />
               プレミアムキャットフード スコアTOP3
             </h2>
             <Link href="/category/premium-cat-food" className="text-sm text-[#C4892A] font-bold hover:underline">全て見る →</Link>
