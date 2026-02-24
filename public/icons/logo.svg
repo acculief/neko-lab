@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- 背景: navy グラデーション -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1A2D4A"/>
+      <stop offset="100%" style="stop-color:#0F1C30"/>
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="20" fill="url(#bg)"/>
+  <!-- 猫の耳（左）-->
+  <polygon points="18,48 28,22 42,42" fill="#C4892A"/>
+  <!-- 猫の耳（右）-->
+  <polygon points="82,48 72,22 58,42" fill="#C4892A"/>
+  <!-- 猫の顔（円）-->
+  <circle cx="50" cy="58" r="26" fill="#C4892A"/>
+  <!-- 猫の内耳（左）-->
+  <polygon points="22,46 29,28 39,42" fill="#E8A840"/>
+  <!-- 猫の内耳（右）-->
+  <polygon points="78,46 71,28 61,42" fill="#E8A840"/>
+  <!-- 目（左）-->
+  <ellipse cx="41" cy="55" rx="5" ry="6" fill="#0F1C30"/>
+  <!-- 目（右）-->
+  <ellipse cx="59" cy="55" rx="5" ry="6" fill="#0F1C30"/>
+  <!-- 目のハイライト（左）-->
+  <circle cx="43" cy="53" r="1.5" fill="white"/>
+  <!-- 目のハイライト（右）-->
+  <circle cx="61" cy="53" r="1.5" fill="white"/>
+  <!-- 鼻-->
+  <polygon points="50,63 47,60 53,60" fill="#0F1C30"/>
+  <!-- 口-->
+  <path d="M 50 63 Q 44 68 41 66" stroke="#0F1C30" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M 50 63 Q 56 68 59 66" stroke="#0F1C30" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <!-- ひげ（左）-->
+  <line x1="24" y1="62" x2="40" y2="61" stroke="#0F1C30" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="24" y1="66" x2="40" y2="64" stroke="#0F1C30" stroke-width="1.2" stroke-linecap="round"/>
+  <!-- ひげ（右）-->
+  <line x1="76" y1="62" x2="60" y2="61" stroke="#0F1C30" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="76" y1="66" x2="60" y2="64" stroke="#0F1C30" stroke-width="1.2" stroke-linecap="round"/>
+</svg>
