@@ -6,7 +6,7 @@ export default function TrophyIcon() {
   if (error) return <span className="text-2xl">🏆</span>;
   return (
     <img
-      src="/icons/trophy.png"
+      src="/icons/trophy.svg"
       alt="スコア"
       width={36}
       height={36}

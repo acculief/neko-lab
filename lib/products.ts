@@ -35,6 +35,7 @@ export const CATEGORIES: Category[] = [
     slug: 'premium-cat-food',
     description: '厳選素材を使ったプレミアムキャットフードを猫暮らしスコアで比較。',
     icon: '🍖',
+    iconImg: '/icons/catfood.svg',
   },
   {
     id: 'kidney-food',
@@ -42,6 +43,7 @@ export const CATEGORIES: Category[] = [
     slug: 'kidney-care-food',
     description: '腎臓病の猫に最適な療法食を獣医師監修の評価基準で徹底比較。',
     icon: '💊',
+    iconImg: '/icons/kidney.svg',
   },
   {
     id: 'auto-toilet',
@@ -49,6 +51,7 @@ export const CATEGORIES: Category[] = [
     slug: 'auto-litter-box',
     description: '自動掃除で手間いらずの全自動猫トイレ。臭い・清潔さ・使いやすさを比較。',
     icon: '🚽',
+    iconImg: '/icons/toilet.svg',
   },
   {
     id: 'cat-litter',
@@ -56,6 +59,7 @@ export const CATEGORIES: Category[] = [
     slug: 'premium-cat-litter',
     description: '消臭力・固まり方で選ぶ高級猫砂ランキング。',
     icon: '✨',
+    iconImg: '/icons/litter.svg',
   },
   {
     id: 'insurance',
@@ -63,5 +67,6 @@ export const CATEGORIES: Category[] = [
     slug: 'pet-insurance',
     description: '猫のペット保険を補償内容・保険料・口コミで徹底比較。',
     icon: '🛡️',
+    iconImg: '/icons/insurance.svg',
   },
 ];
