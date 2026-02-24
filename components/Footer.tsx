@@ -1,31 +1,51 @@
 import Link from 'next/link';
 import { CATEGORIES } from '@/lib/products';
+
 export default function Footer() {
   return (
-    <footer className="bg-[#1c1917] text-[#a8a29e] mt-16">
+    <footer style={{ background: '#0F1C30' }} className="text-[#8A9BB5] mt-16">
       <div className="max-w-5xl mx-auto px-4 py-10">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8">
           <div>
-            <div className="flex items-center gap-2 mb-3"><span className="text-2xl">🐱</span><span className="font-black text-white">猫暮らしラボ</span></div>
-            <p className="text-xs text-[#78716c] leading-relaxed">猫のいる暮らしをもっと豊かに。<br />猫暮らしスコアで最適な商品を。</p>
+            <div className="flex items-center gap-2 mb-3">
+              <div className="w-7 h-7 rounded-md bg-gradient-to-br from-[#1A2D4A] to-[#2C4A6E] flex items-center justify-center">
+                <span className="text-[#C4892A] text-sm">🐾</span>
+              </div>
+              <span className="font-black text-white text-sm">猫暮らしラボ</span>
+            </div>
+            <p className="text-xs text-[#5A6A7A] leading-relaxed">
+              猫のいる暮らしをもっと豊かに。<br />猫暮らしスコアで最適な商品を。
+            </p>
           </div>
           <div>
             <h4 className="text-white font-bold text-sm mb-3">カテゴリ</h4>
             <ul className="space-y-2">
               {CATEGORIES.map(cat => (
-                <li key={cat.id}><Link href={`/category/${cat.slug}`} className="text-xs text-[#78716c] hover:text-[#a8c5b0] transition-colors">{cat.icon} {cat.name}</Link></li>
+                <li key={cat.id}>
+                  <Link href={`/category/${cat.slug}`}
+                    className="text-xs text-[#5A6A7A] hover:text-[#C4892A] transition-colors">
+                    {cat.icon} {cat.name}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
           <div>
             <h4 className="text-white font-bold text-sm mb-3">サイトについて</h4>
             <ul className="space-y-2">
-              <li><Link href="/score" className="text-xs text-[#78716c] hover:text-[#a8c5b0]">猫暮らしスコアとは</Link></li>
+              <li>
+                <Link href="/score" className="text-xs text-[#5A6A7A] hover:text-[#C4892A] transition-colors">
+                  猫暮らしスコアとは
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
-        <div className="border-t border-[#292524] pt-6 text-center">
-          <p className="text-xs text-[#57534e]">※当サイトはAmazonアソシエイト・楽天アフィリエイトプログラムに参加しています。<br />© 2024 猫暮らしラボ</p>
+        <div className="border-t border-[#1A2D4A] pt-6 text-center">
+          <p className="text-xs text-[#3A4A5A]">
+            ※当サイトはAmazonアソシエイト・楽天アフィリエイトプログラムに参加しています。<br />
+            © 2024 猫暮らしラボ
+          </p>
         </div>
       </div>
     </footer>

@@ -5,6 +5,7 @@ const raw: Omit<Product, 'score'>[] = [
   {
     id: 'acana-pacifica', slug: 'acana-pacifica', name: 'アカナ パシフィカ キャット', brand: 'ACANA',
     category: 'cat-food', price: 4980, priceUnit: '1.8kg', image: '/images/acana.jpg',
+    imageUrl: 'https://images-fe.ssl-images-amazon.com/images/I/71AekUqRgGL._AC_UL210_SR210,210_.jpg',
     amazonUrl: 'https://www.amazon.co.jp/dp/B00B4P5NRC',
     rakutenUrl: 'https://search.rakuten.co.jp/search/mall/%E3%82%A2%E3%82%AB%E3%83%8A+%E3%83%91%E3%82%B7%E3%83%95%E3%82%A3%E3%82%AB+%E3%82%AD%E3%83%A3%E3%83%83%E3%83%88/',
     description: '新鮮な魚介類を70%以上使用したグレインフリーフード。タラ・サーモン・ニシンなど豊富な魚介がタンパク質源。',
@@ -15,6 +16,7 @@ const raw: Omit<Product, 'score'>[] = [
   {
     id: 'orijen-cat', slug: 'orijen-cat', name: 'オリジン キャット＆キトン', brand: 'ORIJEN',
     category: 'cat-food', price: 5980, priceUnit: '1.8kg', image: '/images/orijen.jpg',
+    imageUrl: 'https://makeshop-multi-images.akamaized.net/tomcat/itemimages/000000004366_24NwMtp.jpg',
     amazonUrl: 'https://www.amazon.co.jp/dp/B00B4P5OXA',
     description: '新鮮・生・乾燥食材を85%使用。肉・魚・卵・レバー・軟骨など自然食材で猫の本能を満たす最高品質フード。',
     specs: { '原材料': '動物性85%', 'グレイン': 'フリー', 'タンパク質': '40%以上', '脂質': '18%以上' },
@@ -24,6 +26,7 @@ const raw: Omit<Product, 'score'>[] = [
   {
     id: 'monpetit-gold', slug: 'monpetit-gold', name: 'モンプチ プロニュートリション ゴールド', brand: 'Nestlé',
     category: 'cat-food', price: 2380, priceUnit: '800g', image: '/images/monpetit.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/I/71cuZphWoWL._AC_UF894,1000_QL80_.jpg',
     amazonUrl: 'https://www.amazon.co.jp/dp/B07WRCKCZT',
     rakutenUrl: 'https://search.rakuten.co.jp/search/mall/%E3%83%A2%E3%83%B3%E3%83%97%E3%83%81+%E3%83%97%E3%83%AD%E3%83%8B%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%B7%E3%83%A7%E3%83%B3+%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%89/',
     description: '栄養バランスに優れた中価格帯プレミアムフード。入手しやすく猫の好みにも合わせやすい定番品。',
@@ -34,6 +37,7 @@ const raw: Omit<Product, 'score'>[] = [
   {
     id: 'royal-canin-indoor', slug: 'royal-canin-indoor', name: 'ロイヤルカナン インドアキャット', brand: 'Royal Canin',
     category: 'cat-food', price: 3280, priceUnit: '2kg', image: '/images/royalcanin.jpg',
+    imageUrl: 'https://www.min-petkenko.com//data/goods/royalcanin_fhn_indoor_1_f63d6.png',
     amazonUrl: 'https://www.amazon.co.jp/dp/B003R4IYX4',
     description: '室内飼い猫に特化した栄養設計。毛玉ケア・体重管理・消化サポートを同時ケア。獣医師も推奨する定番。',
     specs: { '原材料': '鶏肉・米', 'グレイン': 'あり', 'タンパク質': '30%以上', '脂質': '12%以上' },
@@ -43,6 +47,7 @@ const raw: Omit<Product, 'score'>[] = [
   {
     id: 'supremo-adult', slug: 'supremo-adult', name: 'シュプレモ 成猫用', brand: 'Purina',
     category: 'cat-food', price: 2980, priceUnit: '1.36kg', image: '/images/supremo.jpg',
+    imageUrl: 'https://image1.shopserve.jp/pfirstec2.jp/pic-labo/llimg/NS0035_1.png',
     amazonUrl: 'https://www.amazon.co.jp/dp/B000FKJQUA',
     description: 'ピュリナ最上位ライン。自然素材にこだわり、人工着色料・保存料不使用。23種ビタミン・ミネラル配合。',
     specs: { '原材料': 'チキン', 'グレイン': 'あり', 'タンパク質': '33%以上', '脂質': '17%以上' },

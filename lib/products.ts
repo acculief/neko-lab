@@ -9,6 +9,7 @@ export interface Product {
   price: number;
   priceUnit: string;
   image: string;
+  imageUrl?: string;    // 外部画像URL (referrerPolicy="no-referrer"で表示)
   amazonUrl?: string;
   rakutenUrl?: string;
   description: string;

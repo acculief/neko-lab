@@ -1,19 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #faf8f5;
-  --card: #ffffff;
-  --border: #ede9e3;
-  --text: #1c1917;
-  --muted: #78716c;
-  --primary: #2d5a3d;
-  --primary-light: #e8f0eb;
-  --accent: #c9953a;
-  --accent-light: #fdf3e3;
+  --bg: #FAFAF7;
+  --navy: #1A2D4A;
+  --navy-dark: #0F1C30;
+  --gold: #C4892A;
+  --gold-light: #FFF3DC;
+  --gold-border: #E8C87A;
+  --teal: #2D6A8A;
+  --text: #1C1917;
+  --text-muted: #6B6560;
+  --border: #E8E3DC;
+  --card-bg: #FFFFFF;
+  --warm-white: #FAFAF7;
 }
 
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
-  background: var(--bg);
+  background-color: var(--bg);
   color: var(--text);
-  font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+  font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
+
+/* スクロールバー */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
