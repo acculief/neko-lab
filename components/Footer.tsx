@@ -34,8 +34,13 @@ export default function Footer() {
             <h4 className="text-white font-bold text-sm mb-3">サイトについて</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/score" className="text-xs text-[#5A6A7A] hover:text-[#C4892A] transition-colors">
-                  猫暮らしスコアとは
+                <Link href="/about-score" className="text-xs text-[#5A6A7A] hover:text-[#C4892A] transition-colors">
+                  🔬 スコアの評価方法
+                </Link>
+              </li>
+              <li>
+                <Link href="/article/premium-cat-food-ranking" className="text-xs text-[#5A6A7A] hover:text-[#C4892A] transition-colors">
+                  📖 キャットフードの選び方
                 </Link>
               </li>
             </ul>
@@ -43,8 +48,9 @@ export default function Footer() {
         </div>
         <div className="border-t border-[#1A2D4A] pt-6 text-center">
           <p className="text-xs text-[#3A4A5A]">
-            ※当サイトはAmazonアソシエイト・楽天アフィリエイトプログラムに参加しています。<br />
-            © 2024 猫暮らしラボ
+            ※当サイトはAmazonアソシエイト・楽天アフィリエイトプログラムに参加しています。スコアの算出・ランキングへの影響はありません。<br />
+            © 2025 猫暮らしラボ ·
+            <Link href="/about-score" className="ml-1 hover:text-[#C4892A] transition-colors">評価方法</Link>
           </p>
         </div>
       </div>
