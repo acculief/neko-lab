@@ -5,6 +5,7 @@ const raw: Omit<Product, 'score'>[] = [
   {
     id: 'royal-canin-renal', slug: 'royal-canin-renal', name: 'ロイヤルカナン 腎臓サポート', brand: 'Royal Canin',
     category: 'kidney-food', price: 4200, priceUnit: '2kg', image: '/images/rc-renal.jpg',
+    imageUrl: 'https://vet.royalcanin.jp/storage/product/0000000000000244/product_image_name_detail.png',
     amazonUrl: 'https://www.amazon.co.jp/dp/B001EAUIIU',
     description: '世界で最も信頼される猫の腎臓療法食。低リン・低タンパク設計で腎臓への負担を最小化。嗜好性を高める特別な香りで食欲不振の猫にも対応。',
     specs: { 'リン': '0.31%以下', 'タンパク質': '25.0%以上', 'ナトリウム': '0.4%以下', 'カロリー': '410kcal/100g' },
@@ -14,6 +15,7 @@ const raw: Omit<Product, 'score'>[] = [
   {
     id: 'hills-kd-feline', slug: 'hills-kd', name: 'ヒルズ プリスクリプション ダイエット k/d', brand: "Hill's",
     category: 'kidney-food', price: 5500, priceUnit: '2kg', image: '/images/hills-kd.jpg',
+    imageUrl: 'https://petgo-commerce.s3-ap-northeast-1.amazonaws.com/product/petgo/0052742017938/m-image1.jpg',
     amazonUrl: 'https://www.amazon.co.jp/dp/B0002AR2NI',
     description: '40年以上の研究に基づく腎臓ケア最高峰フード。オメガ3脂肪酸配合で炎症を抑制。臨床試験で腎臓への効果が実証されている療法食の定番。',
     specs: { 'リン': '0.29%以下', 'タンパク質': '24.5%以上', 'EPA+DHA': '0.44%以上', 'カロリー': '425kcal/100g' },
@@ -23,6 +25,7 @@ const raw: Omit<Product, 'score'>[] = [
   {
     id: 'purina-nf-feline', slug: 'purina-nf', name: 'ピュリナ プロプラン 腎臓ケア NF', brand: 'Purina',
     category: 'kidney-food', price: 3800, priceUnit: '1.5kg', image: '/images/purina-nf.jpg',
+    imageUrl: 'https://nestle.jp/sites/g/files/yjnsyp131/files/2022-11/NF_01.png',
     amazonUrl: 'https://www.amazon.co.jp/s?k=purina+nf+kidney',
     description: '腎臓機能のサポートに特化したピュリナの療法食。低リン・低ナトリウム・制限タンパクで腎臓の負担を軽減。食いつきの良さが評価されている。',
     specs: { 'リン': '0.30%以下', 'タンパク質': '24.0%以上', 'ナトリウム': '0.38%以下', 'カロリー': '395kcal/100g' },
@@ -32,6 +35,7 @@ const raw: Omit<Product, 'score'>[] = [
   {
     id: 'science-diet-urinary', slug: 'science-diet-kidney', name: 'ヒルズ サイエンス・ダイエット シニアプラス 腎臓・心臓健康維持用', brand: "Hill's",
     category: 'kidney-food', price: 3500, priceUnit: '1.8kg', image: '/images/hills-senior.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/I/81BLHI6wl9L._AC_UF894,1000_QL80_.jpg',
     amazonUrl: 'https://www.amazon.co.jp/dp/B07DJ1FPKC',
     description: '療法食に移行前のシニア猫に適した腎臓・心臓サポートフード。低リン・低ナトリウム設計で市販品ながら腎臓ケアに配慮。',
     specs: { 'リン': '0.45%以下', 'タンパク質': '28.0%以上', 'ナトリウム': '0.35%以下', 'カロリー': '385kcal/100g' },
@@ -41,11 +45,42 @@ const raw: Omit<Product, 'score'>[] = [
   {
     id: 'aixia-miaw-renal', slug: 'aixia-miaw-renal', name: 'アイシア MiawMiaw 腎臓の健康維持（ウェット）', brand: 'アイシア',
     category: 'kidney-food', price: 1800, priceUnit: '60g×12', image: '/images/miaw-renal.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/I/61a3dWxUF0L._AC_UF894,1000_QL80_.jpg',
     amazonUrl: 'https://www.amazon.co.jp/s?k=%E3%82%A2%E3%82%A4%E3%82%B7%E3%82%A2+miaw+%E8%85%8E%E8%87%93',
     description: '食欲不振の腎臓病猫にも食べやすいウェットタイプ。水分補給をサポートし腎臓への負担を軽減。低リン設計で市販品の中でもケアに配慮した選択肢。',
     specs: { 'リン': '0.20%以下（ウェット）', 'タンパク質': '10.0%以上', '水分': '78%以上', 'カロリー': '85kcal/袋' },
     scoreInput: { ingredients: 72, nutrition: 78, palatability: 90, price_value: 82, reviews: 78 },
     tags: ['ウェット', '水分補給', '食欲不振対応', '市販品'],
+  },
+  {
+    id: 'rc-renal-wet', slug: 'rc-renal-wet', name: 'ロイヤルカナン 腎臓サポート ウェット缶詰', brand: 'Royal Canin',
+    category: 'kidney-food', price: 3200, priceUnit: '85g×12缶', image: '/images/rc-renal-wet.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/I/71GqY3i2yTL._AC_UF894,1000_QL80_.jpg',
+    amazonUrl: 'https://www.amazon.co.jp/s?k=%E3%83%AD%E3%82%A4%E3%83%A4%E3%83%AB%E3%82%AB%E3%83%8A%E3%83%B3+%E8%85%8E%E8%87%93%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88+%E3%82%A6%E3%82%A7%E3%83%83%E3%83%88',
+    description: 'ドライが苦手な猫に最適な腎臓ケアウェットフード。水分補給促進で腎臓の負担をさらに軽減。食欲を刺激するテクスチャーと香りで療法食嫌いの猫にも。',
+    specs: { 'リン': '0.24%以下', 'タンパク質': '9.0%以上', '水分': '75%以上', 'カロリー': '90kcal/缶' },
+    scoreInput: { ingredients: 84, nutrition: 90, palatability: 86, price_value: 68, reviews: 86 },
+    tags: ['ウェット缶', '低リン', '水分補給', '食欲増進'],
+  },
+  {
+    id: 'inaba-churu-renal', slug: 'inaba-churu-renal', name: 'いなば CIAO チュール 腎臓ケア', brand: 'いなばペットフード',
+    category: 'kidney-food', price: 1500, priceUnit: '14g×20本', image: '/images/churu-renal.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/I/71IHLFq2wuL._AC_UF894,1000_QL80_.jpg',
+    amazonUrl: 'https://www.amazon.co.jp/s?k=%E3%81%84%E3%81%AA%E3%81%B0+%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AB+%E8%85%8E%E8%87%93',
+    description: '大人気チュールの腎臓ケア特別バージョン。低リン・ナトリウム制限設計で腎臓病の猫も安心。おやつ感覚で投薬補助にも使いやすい。',
+    specs: { 'リン': '0.15%以下', 'タンパク質': '3.0%以上', '水分': '90%以上', '用途': 'おやつ・投薬補助' },
+    scoreInput: { ingredients: 70, nutrition: 76, palatability: 96, price_value: 86, reviews: 90 },
+    tags: ['チュール', '投薬補助', '大人気', 'おやつ腎ケア'],
+  },
+  {
+    id: 'hills-kd-wet', slug: 'hills-kd-wet', name: 'ヒルズ k/d ウェット チキン', brand: "Hill's",
+    category: 'kidney-food', price: 2800, priceUnit: '82g×24缶', image: '/images/hills-kd-wet.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/I/71DHVjOsaqL._AC_UF894,1000_QL80_.jpg',
+    amazonUrl: 'https://www.amazon.co.jp/s?k=%E3%83%92%E3%83%AB%E3%82%BA+kd+%E3%82%A6%E3%82%A7%E3%83%83%E3%83%88+%E7%8C%AB',
+    description: 'k/dシリーズのウェットバリアント。チキン味で嗜好性が高く、水分補給も同時に実現。腎臓・心臓の両機能をサポートする特別処方。',
+    specs: { 'リン': '0.19%以下', 'タンパク質': '8.6%以上', '水分': '78%以上', 'カロリー': '95kcal/缶' },
+    scoreInput: { ingredients: 86, nutrition: 94, palatability: 82, price_value: 70, reviews: 86 },
+    tags: ['低リン', 'ウェット', 'チキン味', '心腎両対応'],
   },
 ];
 

@@ -5,6 +5,7 @@ const raw: Omit<Product, 'score'>[] = [
   {
     id: 'acana-pacifica', slug: 'acana-pacifica', name: 'アカナ パシフィカ キャット', brand: 'ACANA',
     category: 'cat-food', price: 4980, priceUnit: '1.8kg', image: '/images/acana.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/I/41gNRP1B3PL._AC_UF1000,1000_QL80_.jpg',
     amazonUrl: 'https://www.amazon.co.jp/dp/B00B4P5NRC',
     rakutenUrl: 'https://search.rakuten.co.jp/search/mall/%E3%82%A2%E3%82%AB%E3%83%8A+%E3%83%91%E3%82%B7%E3%83%95%E3%82%A3%E3%82%AB+%E3%82%AD%E3%83%A3%E3%83%83%E3%83%88/',
     description: '新鮮な魚介類を70%以上使用したグレインフリーフード。タラ・サーモン・ニシンなど豊富な魚介がタンパク質源。',
@@ -15,6 +16,7 @@ const raw: Omit<Product, 'score'>[] = [
   {
     id: 'orijen-cat', slug: 'orijen-cat', name: 'オリジン キャット＆キトン', brand: 'ORIJEN',
     category: 'cat-food', price: 5980, priceUnit: '1.8kg', image: '/images/orijen.jpg',
+    imageUrl: 'https://tshop.r10s.jp/hers-dog/cabinet/cat/orijen/orijencatkitten54.jpg?fitin=720%3A720',
     amazonUrl: 'https://www.amazon.co.jp/dp/B00B4P5OXA',
     description: '新鮮・生・乾燥食材を85%使用。肉・魚・卵・レバー・軟骨など自然食材で猫の本能を満たす最高品質フード。',
     specs: { '原材料': '動物性85%', 'グレイン': 'フリー', 'タンパク質': '40%以上', '脂質': '18%以上' },
@@ -24,6 +26,7 @@ const raw: Omit<Product, 'score'>[] = [
   {
     id: 'monpetit-gold', slug: 'monpetit-gold', name: 'モンプチ プロニュートリション ゴールド', brand: 'Nestlé',
     category: 'cat-food', price: 2380, priceUnit: '800g', image: '/images/monpetit.jpg',
+    imageUrl: 'https://item-shopping.c.yimg.jp/i/n/nyanko_9601022',
     amazonUrl: 'https://www.amazon.co.jp/dp/B07WRCKCZT',
     rakutenUrl: 'https://search.rakuten.co.jp/search/mall/%E3%83%A2%E3%83%B3%E3%83%97%E3%83%81+%E3%83%97%E3%83%AD%E3%83%8B%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%B7%E3%83%A7%E3%83%B3+%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%89/',
     description: '栄養バランスに優れた中価格帯プレミアムフード。入手しやすく猫の好みにも合わせやすい定番品。',
@@ -34,6 +37,7 @@ const raw: Omit<Product, 'score'>[] = [
   {
     id: 'royal-canin-indoor', slug: 'royal-canin-indoor', name: 'ロイヤルカナン インドアキャット', brand: 'Royal Canin',
     category: 'cat-food', price: 3280, priceUnit: '2kg', image: '/images/royalcanin.jpg',
+    imageUrl: 'https://item-shopping.c.yimg.jp/i/n/chanet_176714',
     amazonUrl: 'https://www.amazon.co.jp/dp/B003R4IYX4',
     description: '室内飼い猫に特化した栄養設計。毛玉ケア・体重管理・消化サポートを同時ケア。獣医師も推奨する定番。',
     specs: { '原材料': '鶏肉・米', 'グレイン': 'あり', 'タンパク質': '30%以上', '脂質': '12%以上' },
@@ -43,11 +47,44 @@ const raw: Omit<Product, 'score'>[] = [
   {
     id: 'supremo-adult', slug: 'supremo-adult', name: 'シュプレモ 成猫用', brand: 'Purina',
     category: 'cat-food', price: 2980, priceUnit: '1.36kg', image: '/images/supremo.jpg',
+    imageUrl: 'https://item-shopping.c.yimg.jp/i/j/petland_562592',
     amazonUrl: 'https://www.amazon.co.jp/dp/B000FKJQUA',
     description: 'ピュリナ最上位ライン。自然素材にこだわり、人工着色料・保存料不使用。23種ビタミン・ミネラル配合。',
     specs: { '原材料': 'チキン', 'グレイン': 'あり', 'タンパク質': '33%以上', '脂質': '17%以上' },
     scoreInput: { ingredients: 85, palatability: 86, nutrition: 84, price_value: 72, reviews: 82 },
     tags: ['自然素材', '添加物なし', 'バランス重視'],
+  },
+  {
+    id: 'canagan-chicken', slug: 'canagan-chicken', name: 'カナガン チキン グレインフリー', brand: 'Canagan',
+    category: 'cat-food', price: 4800, priceUnit: '1.5kg', image: '/images/canagan.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/I/71qe7v6Q5oL._AC_UF894,1000_QL80_.jpg',
+    amazonUrl: 'https://www.amazon.co.jp/s?k=canagan+%E3%82%AD%E3%83%A3%E3%83%83%E3%83%88%E3%83%95%E3%83%BC%E3%83%89',
+    rakutenUrl: 'https://search.rakuten.co.jp/search/mall/canagan+%E3%82%AD%E3%83%A3%E3%83%83%E3%83%88/',
+    description: '英国発のプレミアムフード。放し飼いチキン75%使用、グレインフリー設計。EUの厳格な基準で製造され、人工添加物・保存料完全不使用。',
+    specs: { '原材料': '放し飼いチキン75%', 'グレイン': 'フリー', 'タンパク質': '38%以上', '脂質': '16%以上' },
+    scoreInput: { ingredients: 94, palatability: 84, nutrition: 92, price_value: 66, reviews: 86 },
+    tags: ['グレインフリー', '放し飼いチキン', '英国産', '添加物なし'],
+  },
+  {
+    id: 'proplan-vitalize', slug: 'proplan-vitalize', name: 'ピュリナ プロプラン バイタライズ', brand: 'Purina',
+    category: 'cat-food', price: 3500, priceUnit: '2kg', image: '/images/proplan.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/I/71eBjc0CdFL._AC_UF894,1000_QL80_.jpg',
+    amazonUrl: 'https://www.amazon.co.jp/s?k=purina+proplan+%E7%8C%AB',
+    description: '獣医師推奨No.1のプロプランシリーズ。高タンパク・低炭水化物で筋肉維持をサポート。消化性の高いサーモンが主原料。',
+    specs: { '原材料': 'サーモン・チキン', 'グレイン': 'あり', 'タンパク質': '40%以上', '脂質': '15%以上' },
+    scoreInput: { ingredients: 86, palatability: 88, nutrition: 90, price_value: 74, reviews: 88 },
+    tags: ['獣医師推奨', '高タンパク', 'サーモン', '筋肉維持'],
+  },
+  {
+    id: 'nutro-wild-salmon', slug: 'nutro-wild-salmon', name: 'ニュートロ ワイルドレシピ サーモン', brand: 'Nutro',
+    category: 'cat-food', price: 3980, priceUnit: '2kg', image: '/images/nutro.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/I/81dB-jMB3WL._AC_UF894,1000_QL80_.jpg',
+    amazonUrl: 'https://www.amazon.co.jp/dp/B07ZV4RXVP',
+    rakutenUrl: 'https://search.rakuten.co.jp/search/mall/%E3%83%8B%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AD+%E3%83%AF%E3%82%A4%E3%83%AB%E3%83%89%E3%83%AC%E3%82%B7%E3%83%94+%E3%82%B5%E3%83%BC%E3%83%A2%E3%83%B3/',
+    description: '野生の食習慣にインスピレーションを得たナチュラルフード。サーモンが第一原料でオメガ3豊富。人工着色料・香料・保存料不使用。',
+    specs: { '原材料': 'サーモン', 'グレイン': 'フリー', 'タンパク質': '35%以上', '脂質': '15%以上' },
+    scoreInput: { ingredients: 90, palatability: 83, nutrition: 88, price_value: 70, reviews: 84 },
+    tags: ['グレインフリー', 'サーモン', 'ナチュラル', 'オメガ3'],
   },
 ];
 

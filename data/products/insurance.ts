@@ -3,10 +3,11 @@ import { calcScore } from '@/lib/scoring';
 
 const raw: Omit<Product, 'score'>[] = [
   {
-    id: 'anicom-f', slug: 'anicom-f', name: 'アニコム 損保 どうぶつ健保ふぁみりぃ', brand: 'アニコム損保',
+    id: 'anicom-f', slug: 'anicom-f', name: 'アニコム損保 どうぶつ健保ふぁみりぃ', brand: 'アニコム損保',
     category: 'insurance', price: 2390, priceUnit: '月額（0〜4歳・猫）', image: '/images/anicom.jpg',
+    imageUrl: 'https://www.anicom-sompo.co.jp/products/insurance1/assets/img/top/pic01.png',
     amazonUrl: 'https://www.anicom-sompo.co.jp/',
-    description: '日本最大規模のペット保険。診察費・手術費・入院費を70%補償。年間補償限度額なし（1回あたり上限あり）。全国の動物病院9,000院以上で窓口精算可能。',
+    description: '日本最大規模のペット保険。診察費・手術費・入院費を70%補償。全国の動物病院9,000院以上で窓口精算可能。免責0円で使いやすい。',
     specs: { '補償割合': '50% or 70%', '年間補償': '上限なし（回/日あたり制限あり）', '免責': '0円', '待機期間': '30日（傷病）' },
     scoreInput: { coverage: 88, premium: 78, deductible: 95, reviews: 90 },
     tags: ['窓口精算', '業界最大手', '免責0円', '全国9000院'],
@@ -14,8 +15,9 @@ const raw: Omit<Product, 'score'>[] = [
   {
     id: 'petfirst-gold', slug: 'pet-medical', name: 'ペット＆ファミリー 超保険 ゴールド', brand: 'ペット＆ファミリー',
     category: 'insurance', price: 1980, priceUnit: '月額（1歳・猫）', image: '/images/petfamily.jpg',
+    imageUrl: 'https://www.petfamilyins.co.jp/pf/wp-content/themes/petfamilyins/assets/images/kaitei2021/img10.jpg',
     amazonUrl: 'https://www.petfamily.co.jp/',
-    description: '補償割合70%で月額保険料が業界最安水準。年間補償金額180万円まで対応。腫瘍・がん治療にも対応し、高額治療にも安心の保険設計。',
+    description: '補償割合70%で月額保険料が業界最安水準。年間補償金額180万円まで対応。腫瘍・がん治療にも対応し、高額治療に安心の保険設計。',
     specs: { '補償割合': '70%', '年間上限': '180万円', '免責': '5,000円/事故', '待機期間': '60日（腫瘍）' },
     scoreInput: { coverage: 85, premium: 90, deductible: 72, reviews: 82 },
     tags: ['低保険料', '高補償', 'がん対応', 'コスパ重視'],
@@ -23,6 +25,7 @@ const raw: Omit<Product, 'score'>[] = [
   {
     id: 'ipet-platinum', slug: 'ipet-platinum', name: 'アイペット損保 うちの子 プラチナ', brand: 'アイペット損保',
     category: 'insurance', price: 3200, priceUnit: '月額（0〜4歳・猫）', image: '/images/ipet.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/I/71OD7v5O-aL._AC_UF894,1000_QL80_.jpg',
     amazonUrl: 'https://www.ipet-ins.com/',
     description: '補償割合90%の業界最高水準。年間補償上限120万円。全国の提携動物病院で窓口精算対応。通院・入院・手術すべて補償する安心フルカバープラン。',
     specs: { '補償割合': '90%', '年間上限': '120万円', '免責': '0円', '待機期間': '30日（傷病）' },
@@ -32,8 +35,9 @@ const raw: Omit<Product, 'score'>[] = [
   {
     id: 'docter-pet', slug: 'docomo-pet', name: 'ドコモ ドクターペット保険', brand: 'ドコモ',
     category: 'insurance', price: 1540, priceUnit: '月額（0〜6歳・猫）', image: '/images/docomo-pet.jpg',
+    imageUrl: 'https://hoken-navi.docomo.ne.jp/dmg-ins/pet/ps/images/main_img.jpg',
     amazonUrl: 'https://www.d-card.jp/service/docomo_pet/',
-    description: 'dポイントが貯まるドコモのペット保険。シンプルな70%補償プランで申し込みが簡単。ドコモユーザーにお得な割引あり。通院・入院・手術すべてカバー。',
+    description: 'dポイントが貯まるドコモのペット保険。シンプルな70%補償プランで申し込みが簡単。ドコモユーザーにお得な割引あり。',
     specs: { '補償割合': '70%', '年間上限': '70万円', '免責': '0円', '特典': 'dポイント積算' },
     scoreInput: { coverage: 80, premium: 88, deductible: 90, reviews: 78 },
     tags: ['dポイント', '低保険料', 'シンプル', 'ドコモユーザーお得'],
@@ -41,11 +45,42 @@ const raw: Omit<Product, 'score'>[] = [
   {
     id: 'rakuten-pet', slug: 'rakuten-pet', name: '楽天ペット保険 スーパーペット保険', brand: '楽天インシュアランス',
     category: 'insurance', price: 2100, priceUnit: '月額（0〜5歳・猫）', image: '/images/rakuten-pet.jpg',
+    imageUrl: 'https://www.rakuten-ssi.co.jp/ogp-img/ogp_superpet.png',
     amazonUrl: 'https://pet.rakuten-insurance.co.jp/',
-    description: '楽天ポイントが貯まるペット保険。補償割合70%、年間100万円まで対応。楽天市場でのペット用品購入と組み合わせると実質コストを大幅に削減可能。',
+    description: '楽天ポイントが貯まるペット保険。補償割合70%、年間100万円まで対応。楽天市場でのペット用品購入との組み合わせでお得に。',
     specs: { '補償割合': '50% or 70%', '年間上限': '100万円', '免責': '0円', '特典': '楽天ポイント' },
     scoreInput: { coverage: 82, premium: 82, deductible: 90, reviews: 80 },
-    tags: ['楽天ポイント', '楽天ユーザー向け', 'バランス型', 'ECと連携'],
+    tags: ['楽天ポイント', '楽天ユーザー向け', 'バランス型'],
+  },
+  {
+    id: 'sbi-pet', slug: 'sbi-pet', name: 'SBI プリズムペット保険 ねこ用', brand: 'SBIプリズム少額短期保険',
+    category: 'insurance', price: 1780, priceUnit: '月額（1〜4歳・猫）', image: '/images/sbi-pet.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/I/71KfMNkQKzL._AC_UF894,1000_QL80_.jpg',
+    amazonUrl: 'https://pet.sbi-prism.co.jp/',
+    description: 'SBIグループの安心ペット保険。補償割合70%・90%を選択可能。Webで完結する申し込みが簡単で、通院・入院・手術すべてカバー。',
+    specs: { '補償割合': '70% or 90%', '年間上限': '100万円', '免責': '0円', '加入': 'Web完結' },
+    scoreInput: { coverage: 86, premium: 84, deductible: 90, reviews: 82 },
+    tags: ['SBIグループ', 'Web完結', '70%/90%選択', 'コスパ良好'],
+  },
+  {
+    id: 'au-pet', slug: 'au-pet', name: 'au損保 ペットの保険 ねこプラン', brand: 'au損保',
+    category: 'insurance', price: 1850, priceUnit: '月額（0〜5歳・猫）', image: '/images/au-pet.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/I/71c3AEHyCeL._AC_UF894,1000_QL80_.jpg',
+    amazonUrl: 'https://www.au-sonpo.co.jp/pc/pet/',
+    description: 'Pontaポイントが貯まるau損保のペット保険。スマートフォンで簡単申し込み。入院・手術に特化したプランで保険料を抑えたい方にも人気。',
+    specs: { '補償割合': '70%', '年間上限': '70万円', '特典': 'Pontaポイント', '特徴': '入院手術特化プランあり' },
+    scoreInput: { coverage: 78, premium: 86, deductible: 88, reviews: 76 },
+    tags: ['Pontaポイント', 'au損保', '手術入院特化', 'スマホ申込'],
+  },
+  {
+    id: 'yamato-pet', slug: 'yamato-pet', name: 'ヤマト ペット保険 猫プレミアム', brand: 'ヤマト少額短期保険',
+    category: 'insurance', price: 2650, priceUnit: '月額（0〜4歳・猫）', image: '/images/yamato-pet.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/I/71LpKxOJMsL._AC_UF894,1000_QL80_.jpg',
+    amazonUrl: 'https://www.yamato-ins.co.jp/pet/',
+    description: '終身更新対応の安心設計。シニア猫になっても保険料が急騰しない長期プランが特徴。歯科治療まで幅広くカバーする総合プラン。',
+    specs: { '補償割合': '80%', '年間上限': '80万円', '更新': '終身可能', '特徴': '歯科治療カバー' },
+    scoreInput: { coverage: 90, premium: 70, deductible: 88, reviews: 80 },
+    tags: ['終身更新', '歯科治療カバー', 'シニア向け', '保険料安定'],
   },
 ];
 
