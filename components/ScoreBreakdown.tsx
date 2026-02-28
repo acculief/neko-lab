@@ -34,6 +34,18 @@ const LABELS: Record<CategoryType, { key: keyof ScoreInput; label: string }[]> =
     { key: 'price_value', label: 'コスパ' },
     { key: 'reviews', label: '口コミ' },
   ],
+  'cat-toy': [
+    { key: 'fun_factor', label: '楽しさ' },
+    { key: 'durability', label: '耐久性' },
+    { key: 'price_value', label: 'コスパ' },
+    { key: 'reviews', label: '口コミ' },
+  ],
+  'cat-carrier': [
+    { key: 'portability', label: '携帯性' },
+    { key: 'safety', label: '安全性' },
+    { key: 'ease_of_use', label: '使いやすさ' },
+    { key: 'price_value', label: 'コスパ' },
+  ],
   'insurance': [
     { key: 'coverage', label: '補償範囲' },
     { key: 'premium', label: '保険料' },

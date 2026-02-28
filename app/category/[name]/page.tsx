@@ -6,6 +6,8 @@ import { KIDNEY_FOOD_PRODUCTS } from '@/data/products/kidney-food';
 import { AUTO_TOILET_PRODUCTS } from '@/data/products/auto-toilet';
 import { CAT_LITTER_PRODUCTS } from '@/data/products/cat-litter';
 import { INSURANCE_PRODUCTS } from '@/data/products/insurance';
+import { CAT_TOY_PRODUCTS } from '@/data/products/cat-toy';
+import { CAT_CARRIER_PRODUCTS } from '@/data/products/cat-carrier';
 import ProductCard from '@/components/ProductCard';
 import ComparisonTable from '@/components/ComparisonTable';
 import type { Product } from '@/lib/products';
@@ -23,6 +25,8 @@ function getProducts(slug: string): Product[] {
   if (slug === 'auto-litter-box') return AUTO_TOILET_PRODUCTS;
   if (slug === 'premium-cat-litter') return CAT_LITTER_PRODUCTS;
   if (slug === 'pet-insurance') return INSURANCE_PRODUCTS;
+  if (slug === 'cat-toy') return CAT_TOY_PRODUCTS;
+  if (slug === 'cat-carrier') return CAT_CARRIER_PRODUCTS;
   return [];
 }
 
@@ -74,7 +78,26 @@ const SEO_TEXT: Record<string, { faq: { q: string; a: string }[]; intro: string;
       { q: 'ペット保険は本当に必要ですか？', a: '猫の一生涯にかかる医療費は平均100〜200万円以上と言われています。特に慢性疾患や癌の治療では数十万円規模の出費になることも。貯蓄で対応できる方は不要ですが、急な高額医療費に備えたい場合はペット保険が有効です。' },
     ],
   },
+  'cat-toy': {
+    intro: '猫のおもちゃは、室内飼いの猫にとって運動不足解消・ストレス発散・狩猟本能の充足に欠かせないアイテムです。猫じゃらし・電動おもちゃ・トンネル・爪とぎなど多様な種類があり、猫の年齢・性格・体力に合わせて選ぶことで、心身ともに健康な生活をサポートできます。',
+    guide: '猫のおもちゃを選ぶ際のポイントは「安全性」「楽しさ」「耐久性」の3点です。素材は天然素材や安全な樹脂製を選び、飲み込めそうな小部品がないかを確認しましょう。電動おもちゃはほったらかし遊びができて便利ですが、監視なしでの長時間使用は避けましょう。猫によって好みが異なるため、複数種類を試して最もエンゲージするタイプを見つけることが大切です。',
+    faq: [
+      { q: '猫のおもちゃはどのくらいの頻度で交換すべきですか？', a: '破損・劣化が見られたら即交換が原則です。特にひも状・羽根タイプは定期的に交換し、誤飲リスクを防ぎましょう。猫の興味が薄れたら新しいおもちゃを導入するローテーション管理も有効です。' },
+      { q: '猫が一人で遊べるおもちゃはありますか？', a: '自動レーザーポインター・電動魚おもちゃ・キャットトンネルは一人遊びに適しています。ただし、飼い主との共同遊びも重要です。1日10〜15分は猫じゃらしなどで一緒に遊ぶ時間を作りましょう。' },
+      { q: '猫が遊んでくれない場合はどうすれば良いですか？', a: '猫には個性があり、好みのおもちゃタイプが異なります。食事前の空腹時に試したり、マタタビを少量付けると興味を引くことがあります。' },
+    ],
+  },
+  'cat-carrier': {
+    intro: '猫用キャリーは、通院・引っ越し・緊急避難など様々な場面で愛猫の安全な移動を確保する必須アイテムです。ハードタイプ・ソフトタイプ・バックパックタイプなど多様な形状があり、使用シーン・猫のサイズ・飼い主のライフスタイルに合わせた選択が重要です。',
+    guide: '猫用キャリーを選ぶ際の重要ポイントは「猫のサイズへの適合」「出し入れのしやすさ」「安全性」「持ち運びやすさ」の4点です。猫が立ち上がれる高さと、向きを変えられる広さが必要です。通院時は上部開口タイプが診察しやすく獣医師にも好まれます。普段からキャリーを部屋に置いて慣れさせることで、移動時のストレスを大幅に軽減できます。',
+    faq: [
+      { q: '猫がキャリーを嫌がる場合の対処法は？', a: '普段からキャリーを部屋に開いた状態で設置し、中でくつろげる環境を作りましょう。フェリウェイをスプレーしたり、お気に入りのブランケットを入れると安心感が増します。2〜4週間かけて慣れさせることが成功のカギです。' },
+      { q: 'キャリーはハードとソフトどちらが良いですか？', a: 'ハードタイプは安全性・耐久性が高く衝撃から守れます。ソフトタイプは軽量・コンパクトで持ち運びやすいです。通院・車移動にはハード、電車・徒歩移動にはソフトが向いています。' },
+      { q: '飛行機への持ち込みはできますか？', a: '機内持ち込みは航空会社によって規定が異なります。Sherpaなど機内持ち込み対応を明記したキャリーを使用し、事前に航空会社に確認しましょう。' },
+    ],
+  },
 };
+
 
 export async function generateMetadata({ params }: { params: Promise<{ name: string }> }): Promise<Metadata> {
   const { name } = await params;

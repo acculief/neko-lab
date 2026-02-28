@@ -1,4 +1,4 @@
-export type CategoryType = 'cat-food' | 'kidney-food' | 'auto-toilet' | 'cat-litter' | 'insurance';
+export type CategoryType = 'cat-food' | 'kidney-food' | 'auto-toilet' | 'cat-litter' | 'insurance' | 'cat-toy' | 'cat-carrier';
 
 export interface ScoreInput {
   ingredients?: number;
@@ -11,6 +11,10 @@ export interface ScoreInput {
   deductible?: number;
   ease_of_use?: number;
   odor_control?: number;
+  fun_factor?: number;      // おもちゃ: 楽しさ
+  durability?: number;      // 耐久性
+  portability?: number;     // キャリー: 持ち運びやすさ
+  safety?: number;          // 安全性
 }
 
 type WeightMap = Partial<Record<keyof ScoreInput, number>>;
@@ -21,6 +25,8 @@ const WEIGHTS: Record<CategoryType, WeightMap> = {
   'auto-toilet': { ease_of_use: 0.30, odor_control: 0.25, price_value: 0.20, reviews: 0.15, ingredients: 0.10 },
   'cat-litter': { odor_control: 0.35, ease_of_use: 0.25, price_value: 0.20, reviews: 0.20 },
   'insurance': { coverage: 0.35, premium: 0.25, deductible: 0.20, reviews: 0.20 },
+  'cat-toy': { fun_factor: 0.30, durability: 0.20, price_value: 0.25, reviews: 0.25 },
+  'cat-carrier': { portability: 0.30, safety: 0.25, ease_of_use: 0.25, price_value: 0.20 },
 };
 
 export function calcScore(input: ScoreInput, category: CategoryType): number {

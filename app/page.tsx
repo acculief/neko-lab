@@ -1,12 +1,13 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { CATEGORIES } from '@/lib/products';
-import type { Product } from '@/lib/products';
 import { CAT_FOOD_PRODUCTS } from '@/data/products/cat-food';
 import { AUTO_TOILET_PRODUCTS } from '@/data/products/auto-toilet';
 import { CAT_LITTER_PRODUCTS } from '@/data/products/cat-litter';
 import { INSURANCE_PRODUCTS } from '@/data/products/insurance';
 import { KIDNEY_FOOD_PRODUCTS } from '@/data/products/kidney-food';
+import { CAT_TOY_PRODUCTS } from '@/data/products/cat-toy';
+import { CAT_CARRIER_PRODUCTS } from '@/data/products/cat-carrier';
 import ProductCard from '@/components/ProductCard';
 import CategoryIcon from '@/components/CategoryIcon';
 import CategoryTopCard from '@/components/CategoryTopCard';
@@ -16,7 +17,7 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: '猫暮らしラボ｜猫グッズを猫暮らしスコアで徹底比較',
-  description: 'キャットフード・猫砂・全自動トイレ・ペット保険を専門スコアで比較。愛猫に最高の選択を届ける猫特化メディア。',
+  description: 'キャットフード・猫砂・全自動トイレ・ペット保険・おもちゃ・キャリーを専門スコアで比較。愛猫に最高の選択を届ける猫特化メディア。',
   openGraph: {
     title: '猫暮らしラボ｜猫グッズを猫暮らしスコアで徹底比較',
     description: 'キャットフード・猫砂・全自動トイレ・ペット保険を専門スコアで比較。愛猫に最高の選択を。',
@@ -24,6 +25,9 @@ export const metadata: Metadata = {
   },
 };
 
+import type { Product } from '@/lib/products';
+
+// カテゴリ別TOP1を取得
 function getTop1(products: Product[]): Product {
   return [...products].sort((a, b) => (b.score ?? 0) - (a.score ?? 0))[0];
 }
@@ -37,10 +41,12 @@ export default function TopPage() {
     { cat: CATEGORIES[2], product: getTop1(AUTO_TOILET_PRODUCTS) },
     { cat: CATEGORIES[3], product: getTop1(CAT_LITTER_PRODUCTS) },
     { cat: CATEGORIES[4], product: getTop1(INSURANCE_PRODUCTS) },
+    { cat: CATEGORIES[5], product: getTop1(CAT_TOY_PRODUCTS) },
+    { cat: CATEGORIES[6], product: getTop1(CAT_CARRIER_PRODUCTS) },
   ];
 
-  const totalProducts = CAT_FOOD_PRODUCTS.length + KIDNEY_FOOD_PRODUCTS.length + AUTO_TOILET_PRODUCTS.length + CAT_LITTER_PRODUCTS.length + INSURANCE_PRODUCTS.length;
-  const allCounts = [CAT_FOOD_PRODUCTS, KIDNEY_FOOD_PRODUCTS, AUTO_TOILET_PRODUCTS, CAT_LITTER_PRODUCTS, INSURANCE_PRODUCTS];
+  // 全カテゴリの総商品数
+  const totalProducts = CAT_FOOD_PRODUCTS.length + KIDNEY_FOOD_PRODUCTS.length + AUTO_TOILET_PRODUCTS.length + CAT_LITTER_PRODUCTS.length + INSURANCE_PRODUCTS.length + CAT_TOY_PRODUCTS.length + CAT_CARRIER_PRODUCTS.length;
 
   return (
     <div>
@@ -53,20 +59,25 @@ export default function TopPage() {
             <span className="text-[#C4892A]">猫暮らしスコア</span>で比較
           </h1>
           <p className="text-[#A8B8C8] text-base md:text-lg mb-6 leading-relaxed">
-            キャットフード・腎臓ケア・全自動トイレ・猫砂・ペット保険を<br className="hidden md:block" />
+            キャットフード・腎臓ケア・全自動トイレ・猫砂・ペット保険・おもちゃ・キャリーを<br className="hidden md:block" />
             専門家監修の独自スコアで徹底比較。
           </p>
-          <div className="flex justify-center gap-8 mb-8">
-            {[
-              { val: `${totalProducts}+`, label: '比較商品数' },
-              { val: '5', label: '専門カテゴリ' },
-              { val: '100点', label: '独自スコア採点' },
-            ].map(({ val, label }) => (
-              <div key={label} className="text-center">
-                <p className="text-2xl font-black text-[#C4892A]">{val}</p>
-                <p className="text-[10px] text-[#A8B8C8]">{label}</p>
-              </div>
-            ))}
+          {/* 統計バッジ */}
+          <div className="flex justify-center gap-6 mb-8">
+            <div className="text-center">
+              <p className="text-2xl font-black text-[#C4892A]">{totalProducts}+</p>
+              <p className="text-[10px] text-[#A8B8C8]">比較商品数</p>
+            </div>
+            <div className="w-px bg-white/20" />
+            <div className="text-center">
+              <p className="text-2xl font-black text-[#C4892A]">7</p>
+              <p className="text-[10px] text-[#A8B8C8]">専門カテゴリ</p>
+            </div>
+            <div className="w-px bg-white/20" />
+            <div className="text-center">
+              <p className="text-2xl font-black text-[#C4892A]">100点</p>
+              <p className="text-[10px] text-[#A8B8C8]">独自スコア採点</p>
+            </div>
           </div>
           <div className="flex flex-wrap justify-center gap-3">
             {CATEGORIES.map(cat => (
@@ -93,7 +104,7 @@ export default function TopPage() {
             </div>
             <div className="flex-1">
               <h2 className="text-base font-black text-[#7A5420] mb-2">猫暮らしスコアとは？</h2>
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-2 text-center mb-2">
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-2 text-center">
                 {[
                   { label: '原材料品質', icon: '🥩' },
                   { label: '栄養バランス', icon: '⚖️' },
@@ -107,7 +118,7 @@ export default function TopPage() {
                   </div>
                 ))}
               </div>
-              <p className="text-xs text-[#8A6840]">これら5項目を獣医師監修の重みづけで合算し100点満点で評価。90点以上が最高評価のゴールド。</p>
+              <p className="text-xs text-[#8A6840] mt-2">これら5項目を獣医師監修の重みづけで合算し100点満点で評価。90点以上が最高評価のゴールド。</p>
             </div>
           </div>
         </div>
@@ -120,7 +131,7 @@ export default function TopPage() {
           <h2 className="text-2xl font-black text-[#1A2D4A]">🏆 カテゴリ別 No.1 おすすめ</h2>
           <p className="text-sm text-[#6B6560] mt-1">各カテゴリで猫暮らしスコアが最も高い商品</p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-7 gap-4">
           {categoryTops.map(({ cat, product }) => (
             <CategoryTopCard key={cat.id} cat={cat} product={product} />
           ))}
@@ -131,22 +142,25 @@ export default function TopPage() {
       <section className="bg-[#F8F3EB] py-12 px-4 border-y border-[#E8E3DC]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-2xl font-black text-[#1A2D4A] mb-8 text-center">カテゴリから探す</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {CATEGORIES.map((cat, i) => (
-              <Link
-                key={cat.id}
-                href={`/category/${cat.slug}`}
-                className="group bg-white rounded-2xl p-5 text-center shadow-sm hover:shadow-md transition-all border border-[#E8E3DC] hover:border-[#C4892A]"
-              >
-                <div className="flex justify-center mb-3">
-                  <CategoryIcon icon={cat.icon} iconImg={cat.iconImg} size={48} />
-                </div>
-                <p className="text-sm font-bold text-[#1A2D4A] group-hover:text-[#C4892A] transition-colors leading-tight mb-1">
-                  {cat.name}
-                </p>
-                <p className="text-[10px] text-[#8A8078]">{allCounts[i].length}商品を比較</p>
-              </Link>
-            ))}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4">
+            {CATEGORIES.map((cat, i) => {
+              const counts = [CAT_FOOD_PRODUCTS, KIDNEY_FOOD_PRODUCTS, AUTO_TOILET_PRODUCTS, CAT_LITTER_PRODUCTS, INSURANCE_PRODUCTS, CAT_TOY_PRODUCTS, CAT_CARRIER_PRODUCTS];
+              return (
+                <Link
+                  key={cat.id}
+                  href={`/category/${cat.slug}`}
+                  className="group bg-white rounded-2xl p-5 text-center shadow-sm hover:shadow-md transition-all border border-[#E8E3DC] hover:border-[#C4892A]"
+                >
+                  <div className="flex justify-center mb-3">
+                    <CategoryIcon icon={cat.icon} iconImg={cat.iconImg} size={48} />
+                  </div>
+                  <p className="text-sm font-bold text-[#1A2D4A] group-hover:text-[#C4892A] transition-colors leading-tight mb-1">
+                    {cat.name}
+                  </p>
+                  <p className="text-[10px] text-[#8A8078]">{counts[i].length}商品を比較</p>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -203,7 +217,7 @@ export default function TopPage() {
           <div className="grid grid-cols-3 gap-4 max-w-lg mx-auto">
             {[
               { icon: '🏥', label: '獣医師監修', desc: 'スコアモデル設計' },
-              { icon: '🔬', label: '客観評価', desc: '5軸独自スコア' },
+              { icon: '🔬', label: '客観評価', desc: '多軸独自スコア' },
               { icon: '🐱', label: '猫目線', desc: '愛猫家が制作' },
             ].map(item => (
               <div key={item.label} className="bg-white/10 rounded-xl p-3">
