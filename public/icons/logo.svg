@@ -1,73 +1,78 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1A2D4A"/>
-      <stop offset="100%" style="stop-color:#0F1C30"/>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#1A2D4A"/>
     </linearGradient>
-    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#F0C040"/>
-      <stop offset="100%" style="stop-color:#C4892A"/>
+    <linearGradient id="faceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFBF0"/>
+      <stop offset="100%" stop-color="#F5ECD7"/>
     </linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
-    </filter>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F0C040"/>
+      <stop offset="100%" stop-color="#C4892A"/>
+    </linearGradient>
+    <clipPath id="circ">
+      <circle cx="100" cy="100" r="92"/>
+    </clipPath>
   </defs>
-  <!-- 背景円 -->
-  <circle cx="100" cy="100" r="95" fill="url(#bgGrad)"/>
 
-  <!-- 猫の耳（左）外 -->
-  <polygon points="42,90 58,42 82,80" fill="white" filter="url(#shadow)"/>
-  <!-- 猫の耳（右）外 -->
-  <polygon points="158,90 142,42 118,80" fill="white" filter="url(#shadow)"/>
-  <!-- 猫の耳（左）内 -->
-  <polygon points="48,84 60,50 76,76" fill="#FFC0C0"/>
-  <!-- 猫の耳（右）内 -->
-  <polygon points="152,84 140,50 124,76" fill="#FFC0C0"/>
+  <!-- 背景 -->
+  <circle cx="100" cy="100" r="96" fill="#1A2D4A"/>
+  <circle cx="100" cy="100" r="92" fill="url(#bg)"/>
 
-  <!-- 猫の顔 -->
-  <circle cx="100" cy="115" r="54" fill="white" filter="url(#shadow)"/>
+  <!-- 星（装飾） -->
+  <circle cx="40" cy="38" r="2" fill="white" opacity="0.6"/>
+  <circle cx="165" cy="32" r="1.5" fill="white" opacity="0.5"/>
+  <circle cx="155" cy="60" r="1" fill="white" opacity="0.4"/>
+  <circle cx="32" cy="70" r="1.5" fill="white" opacity="0.4"/>
 
-  <!-- 目（左）外 -->
-  <ellipse cx="82" cy="108" rx="10" ry="12" fill="#1A2D4A"/>
-  <!-- 目（左）ハイライト -->
-  <circle cx="86" cy="104" r="3.5" fill="white"/>
-  <!-- 目（左）小ハイライト -->
-  <circle cx="80" cy="113" r="1.5" fill="white" opacity="0.6"/>
+  <!-- 耳（左）-->
+  <path d="M58 98 L70 52 L92 88" fill="url(#faceGrad)"/>
+  <!-- 耳内（左） -->
+  <path d="M64 90 L72 62 L86 84" fill="#FFB3C1" opacity="0.6"/>
 
-  <!-- 目（右）外 -->
-  <ellipse cx="118" cy="108" rx="10" ry="12" fill="#1A2D4A"/>
-  <!-- 目（右）ハイライト -->
-  <circle cx="122" cy="104" r="3.5" fill="white"/>
-  <!-- 目（右）小ハイライト -->
-  <circle cx="116" cy="113" r="1.5" fill="white" opacity="0.6"/>
+  <!-- 耳（右）-->
+  <path d="M142 98 L130 52 L108 88" fill="url(#faceGrad)"/>
+  <!-- 耳内（右） -->
+  <path d="M136 90 L128 62 L114 84" fill="#FFB3C1" opacity="0.6"/>
+
+  <!-- 顔 -->
+  <ellipse cx="100" cy="112" rx="46" ry="42" fill="url(#faceGrad)"/>
+
+  <!-- 目（左） -->
+  <ellipse cx="84" cy="105" rx="7" ry="8" fill="#1A2D4A"/>
+  <ellipse cx="84" cy="104" rx="5.5" ry="6.5" fill="#2ECC71"/>
+  <ellipse cx="84" cy="104" rx="2.5" ry="5" fill="#1A2D4A"/>
+  <circle cx="82" cy="101.5" r="1.5" fill="white"/>
+
+  <!-- 目（右） -->
+  <ellipse cx="116" cy="105" rx="7" ry="8" fill="#1A2D4A"/>
+  <ellipse cx="116" cy="104" rx="5.5" ry="6.5" fill="#2ECC71"/>
+  <ellipse cx="116" cy="104" rx="2.5" ry="5" fill="#1A2D4A"/>
+  <circle cx="114" cy="101.5" r="1.5" fill="white"/>
 
   <!-- 鼻 -->
-  <ellipse cx="100" cy="124" rx="5" ry="3.5" fill="#FFB6C1"/>
+  <path d="M97 117 L100 120 L103 117 Q100 114 97 117Z" fill="#F4A0A0"/>
+
   <!-- 口 -->
-  <path d="M 100 127 Q 91 134 86 131" stroke="#1A2D4A" stroke-width="2" fill="none" stroke-linecap="round"/>
-  <path d="M 100 127 Q 109 134 114 131" stroke="#1A2D4A" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M100 120 Q94 126 90 123" stroke="#C4892A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M100 120 Q106 126 110 123" stroke="#C4892A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
 
-  <!-- ひげ（左上） -->
-  <line x1="50" y1="120" x2="86" y2="122" stroke="#1A2D4A" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-  <!-- ひげ（左下） -->
-  <line x1="50" y1="128" x2="86" y2="127" stroke="#1A2D4A" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-  <!-- ひげ（右上） -->
-  <line x1="150" y1="120" x2="114" y2="122" stroke="#1A2D4A" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-  <!-- ひげ（右下） -->
-  <line x1="150" y1="128" x2="114" y2="127" stroke="#1A2D4A" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  <!-- ヒゲ（左） -->
+  <line x1="88" y1="119" x2="62" y2="115" stroke="#888" stroke-width="1.2" opacity="0.7"/>
+  <line x1="88" y1="122" x2="62" y2="122" stroke="#888" stroke-width="1.2" opacity="0.7"/>
+  <line x1="88" y1="125" x2="64" y2="129" stroke="#888" stroke-width="1.2" opacity="0.7"/>
 
-  <!-- トロフィー（右下） -->
-  <g transform="translate(130, 148) scale(0.9)">
-    <!-- トロフィーカップ -->
-    <path d="M 10 0 L 30 0 L 28 20 Q 20 28 12 20 Z" fill="url(#goldGrad)"/>
-    <!-- ハンドル左 -->
-    <path d="M 10 5 Q 2 5 2 13 Q 2 20 10 18" stroke="#C4892A" stroke-width="2.5" fill="none"/>
-    <!-- ハンドル右 -->
-    <path d="M 30 5 Q 38 5 38 13 Q 38 20 30 18" stroke="#C4892A" stroke-width="2.5" fill="none"/>
-    <!-- 台座 -->
-    <rect x="13" y="20" width="14" height="5" fill="#C4892A"/>
-    <rect x="8" y="25" width="24" height="4" rx="1" fill="url(#goldGrad)"/>
-    <!-- 星 -->
-    <polygon points="20,4 21.5,8.5 26,8.5 22.5,11 24,15.5 20,13 16,15.5 17.5,11 14,8.5 18.5,8.5" fill="white" opacity="0.9"/>
-  </g>
+  <!-- ヒゲ（右） -->
+  <line x1="112" y1="119" x2="138" y2="115" stroke="#888" stroke-width="1.2" opacity="0.7"/>
+  <line x1="112" y1="122" x2="138" y2="122" stroke="#888" stroke-width="1.2" opacity="0.7"/>
+  <line x1="112" y1="125" x2="136" y2="129" stroke="#888" stroke-width="1.2" opacity="0.7"/>
+
+  <!-- 頭頂部の毛 -->
+  <path d="M95 72 Q100 64 105 72" stroke="url(#faceGrad)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- 金バッジ -->
+  <circle cx="148" cy="152" r="18" fill="url(#gold)"/>
+  <text x="148" y="158" text-anchor="middle" font-size="16" font-family="serif" font-weight="bold" fill="white">🐾</text>
 </svg>
