@@ -104,15 +104,17 @@ export async function generateMetadata({ params }: { params: Promise<{ name: str
   const cat = CATEGORIES.find(c => c.slug === name);
   if (!cat) return {};
   return {
-    title: `${cat.name}おすすめランキング2024【猫暮らしスコアで徹底比較】`,
-    description: `${cat.description}2024年最新版・獣医師監修の猫暮らしスコアで${cat.name}を比較。選び方ガイド・よくある質問も掲載。`,
+    title: `${cat.name}おすすめランキング2025年版【猫暮らしスコアで徹底比較】`,
+    description: `${cat.name}おすすめランキング2025年版。獣医師監修の猫暮らしスコアで厳選した製品を徹底比較。選び方ガイド・よくある質問も掲載。${cat.description}`,
     alternates: { canonical: `https://neko-lab.vercel.app/category/${cat.slug}` },
     openGraph: {
-      title: `${cat.name}おすすめランキング2024`,
-      description: cat.description,
+      title: `${cat.name}おすすめランキング2025年版`,
+      description: `${cat.name}おすすめランキング2025年版。獣医師監修スコアで徹底比較。`,
+      type: 'website' as const,
       url: `https://neko-lab.vercel.app/category/${cat.slug}`,
-      images: [{ url: '/og-image.png' }],
+      images: [{ url: '/og-image.png', width: 1200, height: 630 }],
     },
+    twitter: { card: 'summary_large_image' },
   };
 }
 
@@ -183,7 +185,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ name:
         <div className="flex items-center gap-3 mb-3">
           <span className="text-4xl">{cat.icon}</span>
           <h1 className="text-2xl md:text-3xl font-black text-[#1c1917]">
-            {cat.name}おすすめランキング2024
+            {cat.name}おすすめランキング2025年版
           </h1>
         </div>
         {seo && <p className="text-[#57534e] leading-relaxed text-sm">{seo.intro}</p>}
